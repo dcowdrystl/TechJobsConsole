@@ -43,16 +43,16 @@ namespace TechJobsConsole
             LoadData();
             List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
 
-            foreach (Dictionary< string, string> job in AllJobs)
+            foreach (Dictionary< string, string> row in AllJobs)
             {
                 string aValue = "";
-                foreach (KeyValuePair<string, string> kvp in job)
+                foreach (KeyValuePair<string, string> kvp in row)
                 {
-                    aValue += kvp.Value;
-                    aValue = aValue.ToLower();
+                    aValue = kvp.Value.ToLower();
+    
                     if (aValue.Contains(searchTerm))
                     {
-                        jobs.Add(job);
+                        jobs.Add(row);
                     }
                 }
             }
