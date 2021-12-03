@@ -52,7 +52,10 @@ namespace TechJobsConsole
     
                     if (aValue.Contains(searchTerm))
                     {
-                        jobs.Add(row);
+                        if (!jobs.Contains(row))
+                        {
+                            jobs.Add(row);
+                        }
                     }
                 }
             }
